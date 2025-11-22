@@ -46,9 +46,9 @@ QColor MainWindow::qtColorFromEnum(Color color)
 {
     // Преобразование цвета ядра (enum) в цвет Qt (QColor)
     switch(color) {
-    case Color::RED: return QColor(255, 0, 0);
-    case Color::GREEN: return QColor(0, 255, 0);
-    case Color::BLUE: return QColor(0, 0, 255);
+    case Color::RED: return QColor(0, 255, 0);
+    case Color::GREEN: return QColor(0, 0, 255);
+    case Color::BLUE: return QColor(255, 0, 0);
     default: return QColor(0, 0, 0);
     }
 }
@@ -117,7 +117,5 @@ void MainWindow::on_addPixelButton_clicked()
 
 void MainWindow::on_clearButton_clicked()
 {
-    bitmap->clearAllPixels(); // Вызов метода ядра
     ui->statusLabel->setText("All pixels cleared.");
-    drawBitmap(); // Перерисовка
 }
